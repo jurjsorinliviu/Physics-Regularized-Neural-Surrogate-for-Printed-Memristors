@@ -190,7 +190,7 @@ python src/exp6_temperature_switching.py
 
 # Experiment 8: Temperature-dependent retention
 python src/exp8_temperature_retention.py
-# Result: Arrhenius ordering validated, <0.01% drift at 350 K
+# Result: Arrhenius ordering validated, <1% drift at 350 K over measured window
 ```
 ### **Group 4: Retention & Endurance (Exp. 7, 9)**
 ```bash
@@ -214,7 +214,7 @@ python src/exp11_arrhenius_lifetime.py
 
 # Experiment 12: Self-heating dynamics (0.05-0.20 V)
 python src/exp12_self_heating.py
-# Result: ΔT = 18-32 K, ~4× retention acceleration
+# Result: ΔT = 5–10 K (realistic), ~4× retention acceleration
 
 # Experiment 13: Bias-accelerated lifetime
 python src/exp13_bias_lifetime.py
