@@ -28,6 +28,10 @@ We propose the **first Physics-Informed Neural Network (PINN) framework** tailor
 ```
 printed-memristor-pinn/
 │
+├── .devcontainer/
+│   ├── devcontainer.json                        # GitHub Codespaces configuration
+│   └── post-create.sh                           # Environment setup script
+│
 ├── data/
 │   ├── printed_memristor_training_data.csv      # Pre-generated synthetic dataset
 │
@@ -73,7 +77,30 @@ printed-memristor-pinn/
 
 ## ⚙️ Installation
 
-### **Clone and Install**
+### **Option 1: GitHub Codespaces (Recommended for Quick Start)**
+
+Launch a fully configured development environment in your browser with one click:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/jurjsorinliviu/Physics-Informed-Neural-Networks-for-Printed-Memristors)
+
+**What's included:**
+- 🐍 Python 3.10 with all dependencies pre-installed
+- 📦 TensorFlow, NumPy, Pandas, Matplotlib, SciPy
+- 🛠️ VS Code with Python, Jupyter, and linting extensions
+- 📁 Pre-configured results directories
+
+**Getting started in Codespaces:**
+1. Click the badge above or go to the repository and click **Code** → **Codespaces** → **Create codespace on main**
+2. Wait for the container to build (~2-3 minutes on first launch)
+3. The post-create script will automatically install all dependencies
+4. Start running experiments immediately:
+   ```bash
+   python src/run_pinn.py --mode full --full-epochs 100 --results-dir results_test
+   ```
+
+### **Option 2: Local Installation**
+
+**Clone and Install**
 ```bash
 git clone https://github.com/jurjsorinliviu/Physics-Informed-Neural-Networks-for-Printed-Memristors.git
 cd Physics-Informed-Neural-Networks-for-Printed-Memristors
