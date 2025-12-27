@@ -5,6 +5,7 @@ This repository contains the full framework, dataset, and scripts to reproduce t
 **"Physics-Regularized Neural Surrogate Framework for Printed Memristors"**  
 
 📄 **Status:** *Submitted for publication*
+![Figure1](https://github.com/user-attachments/assets/1bb95950-7589-4a6b-b2c3-7b978d529735)
 
 ---
 
