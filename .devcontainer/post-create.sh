@@ -4,7 +4,7 @@
 
 set -e
 
-echo "🚀 Setting up Physics-Informed Neural Networks for Printed Memristors environment..."
+echo "🚀 Setting up Physics-Regularized Neural Surrogate Framework for Printed Memristors environment..."
 
 # Upgrade pip to latest version
 echo "📦 Upgrading pip..."
@@ -40,7 +40,7 @@ echo ""
 echo "✨ Environment setup complete!"
 echo ""
 echo "Quick start commands:"
-echo "  # Train PINN model (best configuration)"
+echo "  # Train PRNS model (best configuration)"
 echo "  python src/run_pinn.py --mode full --full-epochs 800 --full-hidden-layers 4 --full-neurons 128 --full-learning-rate 2e-4 --full-noise-std 0.002 --full-variability 0.05 --full-max-physics-weight 0.1 --full-trainable-params ohmic_conductance --full-disable-concentration --full-seed 42 --results-dir results_best"
 echo ""
 echo "  # Run supplementary experiment 1"
