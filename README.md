@@ -128,7 +128,7 @@ tensorflow>=2.9.0
 
 ## 🚀 Quick Start
 
-### **1. Train PINN Model (Best Configuration)**
+### **1. Train PRNS Model (Best Configuration)**
 
 ```bash
 python src/run_pinn.py --mode full \
@@ -298,7 +298,7 @@ python src/ExtendedValidation.py \
 - ✅ Aerosol-jet MoS₂ (Ag/MoS₂/Ag)
 - ✅ Paper-based MoS₂/graphene
 
-**Result**: PINN achieves lowest error on MoS₂ and paper datasets, remains competitive on IGZO.
+**Result**: PRNS achieves lowest error on MoS₂ and paper datasets, remains competitive on IGZO.
 
 ---
 
