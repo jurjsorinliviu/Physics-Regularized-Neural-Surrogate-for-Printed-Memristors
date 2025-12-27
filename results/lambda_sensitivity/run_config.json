@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-12-22T18:40:29.301462Z",
+  "dataset": "C:\\Users\\jurjs\\Desktop\\PostDoc pmTUC\\Papers ideas\\Modeling printed memristors using PINNs paper\\Code\\printed_memristor_training_data.csv",
+  "concentration_label": "10_percent_PMMA",
+  "device_id": 0,
+  "epochs": 800,
+  "learning_rate": 0.0002,
+  "noise_std": 0.002,
+  "variability_bound": 0.05,
+  "hidden_layers": 4,
+  "neurons_per_layer": 128,
+  "state_mixing": 0.2,
+  "seed": 42,
+  "split_seed": 12345,
+  "max_physics_weights": [
+    0.0,
+    0.1,
+    0.5,
+    1.0
+  ]
+}

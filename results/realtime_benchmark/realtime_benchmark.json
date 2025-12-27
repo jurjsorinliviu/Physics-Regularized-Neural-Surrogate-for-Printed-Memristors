@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-12-22T18:52:39.037722Z",
+  "settings": {
+    "backend": "torch",
+    "epochs": 800,
+    "learning_rate": 0.0002,
+    "noise_std": 0.002,
+    "variability_bound": 0.05,
+    "hidden_layers": 4,
+    "neurons_per_layer": 128,
+    "seed": 42,
+    "split_seed": 12345,
+    "max_physics_weight": 0.1,
+    "warmup": 20,
+    "repeats": 200
+  },
+  "test_samples": 200,
+  "physics_regularized": {
+    "model_size": {
+      "total_params": 50179.0,
+      "float32_param_bytes": 200716.0,
+      "float32_param_kib": 196.01171875
+    },
+    "waveform": {
+      "n_samples": 200.0,
+      "warmup": 20.0,
+      "repeats": 200.0,
+      "latency_mean_ms": 0.44550799999999996,
+      "latency_p95_ms": 0.60344,
+      "throughput_samples_per_s": 448925.72075024474
+    },
+    "per_sample": {
+      "n_samples": 1.0,
+      "warmup": 20.0,
+      "repeats": 200.0,
+      "latency_mean_ms": 0.15531350000000002,
+      "latency_p95_ms": 0.26089499999999977,
+      "throughput_samples_per_s": 6438.590335032047
+    }
+  },
+  "data_only": {
+    "model_size": {
+      "total_params": 50179.0,
+      "float32_param_bytes": 200716.0,
+      "float32_param_kib": 196.01171875
+    },
+    "waveform": {
+      "n_samples": 200.0,
+      "warmup": 20.0,
+      "repeats": 200.0,
+      "latency_mean_ms": 0.43953600000000004,
+      "latency_p95_ms": 0.6152849999999995,
+      "throughput_samples_per_s": 455025.299406647
+    },
+    "per_sample": {
+      "n_samples": 1.0,
+      "warmup": 20.0,
+      "repeats": 200.0,
+      "latency_mean_ms": 0.1416065,
+      "latency_p95_ms": 0.19698999999999997,
+      "throughput_samples_per_s": 7061.822727064083
+    }
+  },
+  "vteam": {
+    "waveform_latency_mean_ms": 0.5103255,
+    "waveform_latency_p95_ms": 0.67028,
+    "per_sample_latency_mean_ms": 0.003992000000000001,
+    "per_sample_latency_p95_ms": 0.0041,
+    "waveform_divided_per_sample_mean_ms": 0.0025516275,
+    "waveform_divided_per_sample_p95_ms": 0.0033514
+  },
+  "yakopcic": {
+    "waveform_latency_mean_ms": 0.6685365,
+    "waveform_latency_p95_ms": 0.9260499999999972,
+    "per_sample_latency_mean_ms": 0.0043630000000000006,
+    "per_sample_latency_p95_ms": 0.0045,
+    "waveform_divided_per_sample_mean_ms": 0.0033426824999999998,
+    "waveform_divided_per_sample_p95_ms": 0.004630249999999986
+  }
+}
