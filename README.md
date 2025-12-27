@@ -1,8 +1,8 @@
-# Physics-Informed-Neural-Networks-for-Printed-Memristors
+# Physics-Regularized-Neural-Surrogate-for-Printed-Memristors
 
 This repository contains the full framework, dataset, and scripts to reproduce the experiments from:
 
-**"Physics-Informed Neural Networks for Compact Modeling of Printed Memristors: A Generalizable Framework"**  
+**"Physics-Regularized Neural Surrogate Framework for Printed Memristors"**  
 
 📄 **Status:** *Submitted for publication*
 
@@ -10,12 +10,12 @@ This repository contains the full framework, dataset, and scripts to reproduce t
 
 ## 🌟 Highlights
 
-We propose the **first Physics-Informed Neural Network (PINN) framework** tailored for printed memristors, incorporating:
+We propose the **physics-regularized neural surrogate (PRNS) framework** tailored for printed memristors, incorporating:
 
-- ✅ **4.1× accuracy improvement** over VTEAM baseline (RRMSE: 0.061 vs 0.251)
+- ✅ **4.31× accuracy improvement** over VTEAM baseline (RRMSE: 0.063 vs 0.273)
 - ✅ **29% energy reduction** compared to phenomenological models
 - ✅ **Device-to-device variability modeling** with parameter perturbation
-- ✅ **Noise robustness**: 1.9-4.3× lower error under 10% measurement corruption
+- ✅ **Noise robustness**: stable under up to 10% noise (as tested)
 - ✅ **Multi-mechanism conduction**: Ohmic, SCLC, and interfacial transport physics
 - ✅ **Temperature-dependent reliability**: Arrhenius lifetime projections (E_a = 0.379 eV)
 - ✅ **15 comprehensive validation experiments** spanning dynamics, reliability, and lifetime
@@ -26,7 +26,7 @@ We propose the **first Physics-Informed Neural Network (PINN) framework** tailor
 ## 📂 Repository Structure
 
 ```
-printed-memristor-pinn/
+printed-memristor-prns/
 │
 ├── .devcontainer/
 │   ├── devcontainer.json                        # GitHub Codespaces configuration
@@ -37,7 +37,7 @@ printed-memristor-pinn/
 │
 ├── src/
 │   ├── generate_synthetic_data.py               # Dataset generator
-│   ├── mainPINNmodel.py                         # PINN architecture + physics-informed loss
+│   ├── mainPINNmodel.py                         # PRNS architecture + physics-regularized loss
 │   ├── TrainingFrameworkwithNoiseInjection.py   # Training utilities (variability + noise)
 │   ├── ExperimentalValidationFramework.py       # Evaluation metrics
 │   ├── VTEAMModelComparison.py                  # VTEAM baseline implementation
@@ -81,19 +81,25 @@ printed-memristor-pinn/
 
 Launch a fully configured development environment in your browser with one click:
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/jurjsorinliviu/Physics-Informed-Neural-Networks-for-Printed-Memristors)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/jurjsorinliviu/Physics-Regularized-Neural-Surrogate-for-Printed-Memristors)
 
 **What's included:**
+
 - 🐍 Python 3.10 with all dependencies pre-installed
 - 📦 TensorFlow, NumPy, Pandas, Matplotlib, SciPy
 - 🛠️ VS Code with Python, Jupyter, and linting extensions
 - 📁 Pre-configured results directories
 
 **Getting started in Codespaces:**
+
 1. Click the badge above or go to the repository and click **Code** → **Codespaces** → **Create codespace on main**
+
 2. Wait for the container to build (~2-3 minutes on first launch)
+
 3. The post-create script will automatically install all dependencies
+
 4. Start running experiments immediately:
+
    ```bash
    python src/run_pinn.py --mode full --full-epochs 100 --results-dir results_test
    ```
@@ -101,9 +107,10 @@ Launch a fully configured development environment in your browser with one click
 ### **Option 2: Local Installation**
 
 **Clone and Install**
+
 ```bash
-git clone https://github.com/jurjsorinliviu/Physics-Informed-Neural-Networks-for-Printed-Memristors.git
-cd Physics-Informed-Neural-Networks-for-Printed-Memristors
+git clone https://github.com/jurjsorinliviu/Physics-Regularized-Neural-Surrogate-for-Printed-Memristors.git
+cd Physics-Regularized-Neural-Surrogate-for-Printed-Memristors
 pip install -r requirements.txt
 ```
 
@@ -116,11 +123,13 @@ matplotlib>=3.4.0
 scipy>=1.7.0
 tensorflow>=2.9.0
 ```
+
 ---
 
 ## 🚀 Quick Start
 
 ### **1. Train PINN Model (Best Configuration)**
+
 ```bash
 python src/run_pinn.py --mode full \
   --full-epochs 800 \
@@ -135,12 +144,15 @@ python src/run_pinn.py --mode full \
   --full-seed 42 \
   --results-dir results_best
 ```
+
 **Expected Output**:
+
 - Training converges in ~800 epochs
 - Final RRMSE: 0.061 (vs VTEAM: 0.251)
 - Results saved to results_best/
 
 ### **2. Cross-Validation (3 Seeds)**
+
 ```bash
 python src/run_pinn.py --mode full \
   --full-epochs 800 \
@@ -157,11 +169,14 @@ python src/run_pinn.py --mode full \
   --results-dir results_cv \
   --no-plots
 ```
+
 **Expected Output**:
+
 - RRMSE: 0.115 ± 0.062 across 3 seeds
 - Statistical validation of robustness
 
 ### **Ablation Study (No Physics Constraints)**
+
 ```bash
 python src/run_pinn.py --mode full \
   --full-epochs 800 \
@@ -175,7 +190,9 @@ python src/run_pinn.py --mode full \
   --full-seed 42 \
   --results-dir results_ablation
 ```
+
 **Expected Output**:
+
 - ~1.6× accuracy degradation without physics loss
 - Validates importance of physics-informed constraints
 
@@ -186,6 +203,7 @@ python src/run_pinn.py --mode full \
 Comprehensive validation across dynamic operation, reliability, and lifetime projection.
 
 ### **Group 1: Dynamic Operation & Energy (Exp. 1-3)**
+
 ```bash
 # Experiment 1: Dynamic pulse response (66.7 Hz, 50 pulses)
 python src/exp1_dynamic_pulse_response.py
@@ -199,7 +217,9 @@ python src/exp2_write_read_cycles.py
 python src/exp3_energy_efficiency.py
 # Result: 29% lower write energy than VTEAM (94.2 pJ vs 133.6 pJ)
 ```
+
 ### **Group 2: Variability & Robustness (Exp. 4-5)**
+
 ```bash
 # Experiment 4: Multi-cell variability (5-device array)
 python src/exp4_multicell_variability.py
@@ -209,7 +229,9 @@ python src/exp4_multicell_variability.py
 python src/exp5_noise_robustness.py
 # Result: 1.9-4.3× lower error than baselines at 10% noise
 ```
+
 ### **Group 3: Temperature Physics (Exp. 6, 8)**
+
 ```bash
 # Experiment 6: Temperature-dependent I-V (250-350 K)
 python src/exp6_temperature_switching.py
@@ -219,7 +241,9 @@ python src/exp6_temperature_switching.py
 python src/exp8_temperature_retention.py
 # Result: Arrhenius ordering validated, <1% drift at 350 K over measured window
 ```
+
 ### **Group 4: Retention & Endurance (Exp. 7, 9)**
+
 ```bash
 # Experiment 7: Multi-level retention (10⁶ s, 3 levels)
 python src/exp7_multilevel_retention.py
@@ -229,7 +253,9 @@ python src/exp7_multilevel_retention.py
 python src/exp9_endurance_cycling.py
 # Result: 29% window reduction, ~660-cycle lifetime
 ```
+
 ### **Group 5: Coupled Reliability & Lifetime (Exp. 10-15)**
+
 ```bash
 # Experiment 10: Combined reliability mapping (cycle × temperature)
 python src/exp10_combined_reliability.py
@@ -251,6 +277,7 @@ python src/exp13_bias_lifetime.py
 python src/exp14_15_reliability_and_acceleration.py
 # Result: Endurance dominates (~4.8 h vs ~40 h retention)
 ```
+
 **Outputs**: All results saved to results/supplementary_experiments/ with figures and CSV files.
 
 ---
@@ -258,12 +285,15 @@ python src/exp14_15_reliability_and_acceleration.py
 ## 🔎 Extended Validation (Digitized Experimental Curves)
 
 Evaluate generalization on three published device classes:
+
 ```bash
 python src/ExtendedValidation.py \
   --seeds 40 41 42 \
   --output-dir results/extended_validation
 ```
+
 **Tested Devices**:
+
 - ✅ Inkjet-printed IGZO (Ag/IGZO/ITO)
 - ✅ Aerosol-jet MoS₂ (Ag/MoS₂/Ag)
 - ✅ Paper-based MoS₂/graphene
@@ -275,19 +305,25 @@ python src/ExtendedValidation.py \
 ## 🔧 Circuit Integration
 
 ### **Step 1: Export PINN to SPICE-Compatible LUT**
+
 ```bash
 python src/export_pinn_to_spice.py
 ```
+
 **Outputs**:
+
 - pinn_memristor_lut.txt (500×50 grid, 25,000 points)
 - lut_visualization.png (3D surface + I-V slices)
 - circuit_schematic.png (1T1R cell diagram)
 
 ### **Step 2: Run 1T1R Circuit Simulation**
+
 ```bash
 python src/balanced_simulation.py
 ```
+
 **Expected Console Output**:
+
 ```bash
 PINN Model (Physics-Informed, Gradual Switching):
   Initial state:    0.100
@@ -309,9 +345,11 @@ Comparison:
 ```
 
 ### **Step 3: Integration with SPICE**
+
 The exported LUT can be used in circuit simulators:
 
 **ngspice (PWL interpolation):**
+
 ```bash
 * Load LUT
 .control
@@ -319,13 +357,17 @@ load pinn_memristor_lut.txt
 ...
 .endc
 ```
+
 **Verilog-A (analog block):**
+
 ```bash
 // Inside analog block
 I(p,n) <+ interpolate(lut_data, V(p,n), state);
 ```
+
 **Customization**
 Modify Circuit Parameters by editing balanced_simulation.py:
+
 ```bash
 Line ~30-35: Memristor parameters
 R_on = 1e3      # ON resistance (Ohm)
@@ -347,14 +389,17 @@ dt = 0.1e-9  # Decrease for finer resolution (but slower simulation)
 ---
 
 ## 📊 Dataset
+
 ### **Pre-Generated Dataset**
 
 Training data (printed_memristor_training_data.csv) includes:
+
 - 20,000 voltage-current pairs
 - 4 PMMA concentrations: 5%, 10%, 15%, 20%
 - Bipolar sweeps: -2.0 V to +2.0 V
 
 ### **Regenerate Dataset**
+
 ```bash
 python src/generate_synthetic_data.py \
   --output data/printed_memristor_training_data.csv \
@@ -363,7 +408,9 @@ python src/generate_synthetic_data.py \
   --variability 0.05 \
   --concentrations 5,10,15,20
 ```
+
 **Options:**
+
 - samples: Number of samples (default: 20,000)
 - noise-std: Gaussian noise level
 - variability: Device-to-device variation factor
