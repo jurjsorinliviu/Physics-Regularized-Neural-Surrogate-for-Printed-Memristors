@@ -1,5 +1,5 @@
 {
-    "name": "Physics-Informed Neural Networks for Printed Memristors",
+    "name": "Physics-Regularized Neural Surrogate Framework for Printed Memristors",
     "image": "mcr.microsoft.com/devcontainers/python:3.10",
     
     "features": {
@@ -56,3 +56,4 @@
     
     "remoteUser": "vscode"
 }
+
