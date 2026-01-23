@@ -1,0 +1,23 @@
+metric,value
+seeds,"[40, 41, 42, 43, 44, 45, 46, 47]"
+n_seeds,8
+pinn_rrmse_median,0.06506604941737187
+pinn_rrmse_q1,0.04574440003060825
+pinn_rrmse_q3,0.10633234224489095
+pinn_rrmse_iqr,0.0605879422142827
+pinn_rrmse_mean,0.08720583398162753
+pinn_rrmse_std,0.05977836589185287
+vteam_rrmse_median,0.27294956818617216
+vteam_rrmse_q1,0.27294956818617216
+vteam_rrmse_q3,0.27294956818617216
+vteam_rrmse_iqr,0.0
+vteam_rrmse_mean,0.27294956818617216
+vteam_rrmse_std,0.0
+improvement_median,4.198148904722487
+improvement_q1,2.7014154439275218
+improvement_q3,5.983237074987947
+improvement_iqr,3.2818216310604256
+improvement_mean,4.385445466589454
+improvement_std,2.3658205132397963
+best_seed,44
+worst_seed,45
