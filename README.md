@@ -4,7 +4,7 @@ This repository contains the full framework, dataset, and scripts to reproduce t
 
 **"Physics-Regularized Neural Surrogate Framework for Printed Memristors"**  
 
-📄 **Status:** *Submitted for publication*
+📄 **Status:** *Accepted for publication in IEEE Access. Will post link once paper is published.*
 ![Figure1](https://github.com/user-attachments/assets/1bb95950-7589-4a6b-b2c3-7b978d529735)
 
 ---
@@ -175,6 +175,8 @@ python src/run_pinn.py --mode full \
 
 - RRMSE: 0.115 ± 0.062 across 3 seeds
 - Statistical validation of robustness
+- Update (Reviewer response): We ran an 8‑seed cross‑validation (seeds 40–47). The median PRNS RRMSE is 0.065 with IQR 0.046–0.106, while VTEAM remains at 0.273 for all seeds. Even the worst PRNS seed outperforms VTEAM. These results confirm robustness beyond the original 3‑seed sweep.
+
 
 ### **Ablation Study (No Physics Constraints)**
 
