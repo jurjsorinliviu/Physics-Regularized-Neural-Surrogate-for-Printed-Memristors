@@ -2,9 +2,9 @@
 
 This repository contains the full framework, dataset, and scripts to reproduce the experiments from:
 
-**"Physics-Regularized Neural Surrogate Framework for Printed Memristors"**  
+**"[Physics-Regularized Neural Surrogate Framework for Printed Memristors](https://ieeexplore.ieee.org/document/11364217)"**  
 
-📄 **Status:** *This work is published in the IEEE Access journal: S. L. Jurj, "A Physics-Regularized Neural Surrogate Framework for Printed Memristors," in IEEE Access, doi: 10.1109/ACCESS.2026.3658220.*
+📄 **Status:** *This work is published in the IEEE Access journal: S. L. Jurj, "A Physics-Regularized Neural Surrogate Framework for Printed Memristors," in IEEE Access, [doi: 10.1109/ACCESS.2026.3658220](https://doi.org/10.1109/ACCESS.2026.3658220).*
 ![Figure1](https://github.com/user-attachments/assets/1bb95950-7589-4a6b-b2c3-7b978d529735)
 
 ---
